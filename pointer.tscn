@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://oi1wgt2rjdnt"]
+
+[ext_resource type="Script" path="res://test_point.gd" id="1_wxndc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_klm31"]
+size = Vector3(1, 1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kc4db"]
+albedo_color = Color(0.243137, 0.556863, 0.364706, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xivrv"]
+top_radius = 0.0
+bottom_radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khbag"]
+albedo_color = Color(8.18223e-07, 0.474972, 0.192825, 1)
+
+[node name="Pointer" type="Node3D"]
+script = ExtResource("1_wxndc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_klm31")
+surface_material_override/0 = SubResource("StandardMaterial3D_kc4db")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -3.26603)
+mesh = SubResource("CylinderMesh_xivrv")
+surface_material_override/0 = SubResource("StandardMaterial3D_khbag")
