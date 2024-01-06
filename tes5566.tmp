@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdwpmf6qnin8"]
+
+[ext_resource type="PackedScene" uid="uid://cbpd8lgp71pcs" path="res://spider_bot_model.tscn" id="1_12ttw"]
+[ext_resource type="PackedScene" uid="uid://8mvpauybv8ab" path="res://see_bot.tscn" id="2_djpqd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fcbpl"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_o8ud8"]
+sky_material = SubResource("ProceduralSkyMaterial_fcbpl")
+
+[sub_resource type="Environment" id="Environment_wrdpx"]
+background_mode = 2
+sky = SubResource("Sky_o8ud8")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d20l5"]
+albedo_color = Color(0.172549, 0.407843, 0.176471, 1)
+
+[node name="TestingLookers" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wrdpx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+use_collision = true
+size = Vector3(500, 4, 500)
+material = SubResource("StandardMaterial3D_d20l5")
+
+[node name="SpiderBot" parent="." instance=ExtResource("1_12ttw")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77776, 11.9469)
+
+[node name="SeeBot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_djpqd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.45496, 1, 0)
+target = NodePath("../SpiderBot")

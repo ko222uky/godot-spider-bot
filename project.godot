@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Spider Bot Test"
-run/main_scene="res://test_scene.tscn"
+run/main_scene="res://testing_lookers.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

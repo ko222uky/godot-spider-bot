@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp1v1hjefcjuo"]
+
+[ext_resource type="Script" path="res://quat_bot.gd" id="1_hyb4h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3uw85"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc4nh"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_h6mpb"]
+size = Vector3(1, 1, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v36vr"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="QuatBot" type="Node3D"]
+script = ExtResource("1_hyb4h")
+
+[node name="QuatBotBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("CapsuleMesh_3uw85")
+surface_material_override/0 = SubResource("StandardMaterial3D_bc4nh")
+
+[node name="QuatBotFace" type="MeshInstance3D" parent="QuatBotBody"]
+transform = Transform3D(0.948107, 0, -0.31795, 0, 1, 0, 0.31795, 0, 0.948107, 0.5, 1.591, -2.358)
+mesh = SubResource("PrismMesh_h6mpb")
+surface_material_override/0 = SubResource("StandardMaterial3D_v36vr")
+
+[node name="QuatBotFace2" type="MeshInstance3D" parent="QuatBotBody"]
+transform = Transform3D(0.951057, 0, 0.309017, 0, 1, 0, -0.309017, 0, 0.951057, -0.5, 1.591, -2.358)
+mesh = SubResource("PrismMesh_h6mpb")
+surface_material_override/0 = SubResource("StandardMaterial3D_v36vr")

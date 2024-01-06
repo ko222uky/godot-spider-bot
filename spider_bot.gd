@@ -45,8 +45,7 @@ func _process(_delta: float) -> void:
 	position = lerp(position, position + transform.basis.y * distance, move_speed * _delta)	
 	
 	_handle_movement(_delta)
-	
-	
+
 func _handle_movement(_delta):
 	var dir = Input.get_axis('ui_up', 'ui_down') # For keyboard inputs, .get_axis() returns a Boolean, first argument is the negative_action, second is the positive_action
 	translate(Vector3(0, 0, dir) * move_speed * _delta)
@@ -72,5 +71,6 @@ func _basis_from_normal(normal: Vector3):
 	
 	return result
 	
-	
+
+
 	
