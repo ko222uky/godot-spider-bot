@@ -1,6 +1,8 @@
 extends Node3D
+## Node3D that the QuatBot will look at
 @export var player: Node3D
-
+## QuatBot's turning speed. Unitless parameter.
+@export var turn_speed: float = 1.00
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
@@ -13,13 +15,13 @@ func _process(_delta: float) -> void:
 	var player_direction_basis = Basis(player_direction_x, player_direction_y, player_direction_z).orthonormalized()
 
 	# Also orthonormalize() to correct for floating point precision error
-	transform.basis = lerp(transform.basis, player_direction_basis, _delta).orthonormalized()
+	transform.basis = lerp(transform.basis, player_direction_basis, turn_speed * _delta).orthonormalized()
 	
 	
 	# Quaternion method; same result, since we instantiate a quaternion with our computed basis
 	var a = Quaternion(transform.basis) # from
 	var b = Quaternion(player_direction_basis) # to
-	var c = a.slerp(b, _delta)
+	var c = a.slerp(b, turn_speed * _delta)
 	#transform.basis = Basis(c)
 	
 

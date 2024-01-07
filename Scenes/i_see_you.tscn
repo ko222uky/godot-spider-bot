@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://brq10nnrd0yre"]
 
-[ext_resource type="PackedScene" uid="uid://8mvpauybv8ab" path="res://see_bot.tscn" id="1_dxqf0"]
+[ext_resource type="PackedScene" uid="uid://8mvpauybv8ab" path="res://NPCs/see_bot.tscn" id="1_dxqf0"]
 
 [node name="ISeeYou" type="Node3D"]
 

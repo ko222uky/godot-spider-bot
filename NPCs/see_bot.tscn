@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://8mvpauybv8ab"]
 
-[ext_resource type="Script" path="res://i_see_you.gd" id="1_c7wgp"]
+[ext_resource type="Script" path="res://Scripts/i_see_you.gd" id="1_c7wgp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bd4i"]
 albedo_color = Color(0.0235294, 0.72549, 0.784314, 1)

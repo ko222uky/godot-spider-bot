@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cp1v1hjefcjuo"]
 
-[ext_resource type="Script" path="res://quat_bot.gd" id="1_hyb4h"]
+[ext_resource type="Script" path="res://Scripts/quat_bot.gd" id="1_hyb4h"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3uw85"]
 radius = 2.0

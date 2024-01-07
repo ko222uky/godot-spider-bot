@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bb75okodjo35v"]
 
 [ext_resource type="PackedScene" uid="uid://cbpd8lgp71pcs" path="res://spider_bot_model.tscn" id="1_wpvvh"]
-[ext_resource type="PackedScene" uid="uid://oi1wgt2rjdnt" path="res://pointer.tscn" id="2_tygw2"]
+[ext_resource type="PackedScene" uid="uid://oi1wgt2rjdnt" path="res://NPCs/pointer.tscn" id="2_tygw2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r6ode"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

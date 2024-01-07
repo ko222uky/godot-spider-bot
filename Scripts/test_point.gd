@@ -9,5 +9,6 @@ extends Node3D
 func _process(delta: float) -> void:
 	
 	# An even simpler method, wherein you only need to provide a target position and rotational axis
+	# NO AXIS LOCK
 	look_at(target.global_position + Vector3(0,height_offset,0), Vector3(0, 1, 0))
 

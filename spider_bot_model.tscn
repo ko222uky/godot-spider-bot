@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://cbpd8lgp71pcs"]
 
 [ext_resource type="PackedScene" uid="uid://b1n5rqw53onuo" path="res://spider_bot/spider_bot_model.gltf" id="1_63bph"]
-[ext_resource type="Script" path="res://start_ik.gd" id="2_jiu1y"]
-[ext_resource type="Script" path="res://spider_bot.gd" id="2_vos8s"]
-[ext_resource type="Script" path="res://ik_target.gd" id="4_ahbfx"]
-[ext_resource type="Script" path="res://step_ray.gd" id="4_if8oj"]
-[ext_resource type="Script" path="res://step_target_container.gd" id="5_3sjvf"]
+[ext_resource type="Script" path="res://Scripts/start_ik.gd" id="2_jiu1y"]
+[ext_resource type="Script" path="res://Scripts/spider_bot.gd" id="2_vos8s"]
+[ext_resource type="Script" path="res://Scripts/ik_target.gd" id="4_ahbfx"]
+[ext_resource type="Script" path="res://Scripts/step_ray.gd" id="4_if8oj"]
+[ext_resource type="Script" path="res://Scripts/step_target_container.gd" id="5_3sjvf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibwqe"]
 albedo_color = Color(0.243137, 0.243137, 0.243137, 1)

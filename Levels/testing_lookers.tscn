@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cdwpmf6qnin8"]
 
 [ext_resource type="PackedScene" uid="uid://cbpd8lgp71pcs" path="res://spider_bot_model.tscn" id="1_12ttw"]
-[ext_resource type="PackedScene" uid="uid://8mvpauybv8ab" path="res://see_bot.tscn" id="2_djpqd"]
-[ext_resource type="PackedScene" uid="uid://cp1v1hjefcjuo" path="res://quat_bot.tscn" id="3_b2icd"]
-[ext_resource type="PackedScene" uid="uid://oi1wgt2rjdnt" path="res://pointer.tscn" id="4_sromp"]
+[ext_resource type="PackedScene" uid="uid://8mvpauybv8ab" path="res://NPCs/see_bot.tscn" id="2_djpqd"]
+[ext_resource type="PackedScene" uid="uid://cp1v1hjefcjuo" path="res://NPCs/quat_bot.tscn" id="3_b2icd"]
+[ext_resource type="PackedScene" uid="uid://oi1wgt2rjdnt" path="res://NPCs/pointer.tscn" id="4_sromp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fcbpl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
