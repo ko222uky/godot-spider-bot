@@ -10,7 +10,7 @@ var is_stepping : bool = false
 ## How far the model can travel until the IK targets update to new positions.
 @export var step_distance: float = 3.0 
 
-func _process(delta):
+func _process(_delta):
 	# we call step() if our current node is NOT stepping AND if our adjacent node is NOT stepping
 	if !is_stepping && !adjacent_leg.is_stepping && abs(global_position.distance_to(step_target.global_position)) > step_distance:
 		step()

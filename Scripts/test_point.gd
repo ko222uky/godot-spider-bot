@@ -6,7 +6,7 @@ extends Node3D
 @export var height_offset: float = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	# An even simpler method, wherein you only need to provide a target position and rotational axis
 	# NO AXIS LOCK

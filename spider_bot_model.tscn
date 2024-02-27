@@ -98,6 +98,7 @@ transform = Transform3D(0.996195, -0.0868241, -0.00759612, 0.0871557, 0.992404, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StepTargetContainer/FrontLeftRay" index="1"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_cam0l")
 
 [node name="FrontRightRay" type="RayCast3D" parent="StepTargetContainer" index="1" node_paths=PackedStringArray("step_target")]
@@ -111,6 +112,7 @@ transform = Transform3D(0.996195, 0.0868241, 0.00759612, -0.0871557, 0.992404, 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StepTargetContainer/FrontRightRay" index="1"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_cam0l")
 
 [node name="BackLeftRay" type="RayCast3D" parent="StepTargetContainer" index="2" node_paths=PackedStringArray("step_target")]
@@ -124,6 +126,7 @@ transform = Transform3D(0.996195, -0.0868241, 0.00759612, 0.0871557, 0.992404, -
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StepTargetContainer/BackLeftRay" index="1"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_cam0l")
 
 [node name="BackRightRay" type="RayCast3D" parent="StepTargetContainer" index="3" node_paths=PackedStringArray("step_target")]
@@ -137,6 +140,7 @@ transform = Transform3D(0.996195, 0.0868241, -0.00759612, -0.0871557, 0.992404, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StepTargetContainer/BackRightRay" index="1"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_cam0l")
 
 [node name="FrontLeftIKTarget" type="Marker3D" parent="." index="2" node_paths=PackedStringArray("step_target", "adjacent_leg", "opposite_leg")]

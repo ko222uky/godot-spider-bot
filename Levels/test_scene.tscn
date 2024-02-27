@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bb75okodjo35v"]
+[gd_scene load_steps=13 format=3 uid="uid://bb75okodjo35v"]
 
 [ext_resource type="PackedScene" uid="uid://cbpd8lgp71pcs" path="res://spider_bot_model.tscn" id="1_wpvvh"]
 [ext_resource type="PackedScene" uid="uid://oi1wgt2rjdnt" path="res://NPCs/pointer.tscn" id="2_tygw2"]
+[ext_resource type="PackedScene" uid="uid://8mvpauybv8ab" path="res://NPCs/see_bot.tscn" id="3_t566u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r6ode"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -32,13 +33,6 @@ albedo_color = Color(1, 1, 0.403922, 1)
 albedo_color = Color(1, 1, 0.403922, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6hwa7"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_jxceh"]
-radius = 10.0
-height = 10.0
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r3b0n"]
-points = PackedVector3Array(1.517, 0.832272, 9.72249, -1.83338, -0.383732, -9.7857, -1.82822, 0.530679, -9.75813, 9.78552, -0.384712, -1.83335, -2.37143, -4.81746, 1.18293, -6.5191, 3.77778, 0.295226, 4.72878, 4.35827, -1.18127, -9.7078, -0.986681, 1.21062, 5.33423, -4.22295, -0.295211, 2.3866, -2.46278, 8.35871, -6.06688, -0.380125, 7.8877, 8.48107, 0.527663, 5.14861, 0.295262, 3.77824, 6.51805, 6.06769, -0.381166, -7.88685, -2.08015, -3.63723, -6.53071, -7.86568, 0.527195, -6.0495, -0.593304, 3.48768, -7.1215, -6.8384, -2.75106, -4.75893, -6.20599, -3.32592, 4.13732, -6.26142, 2.30981, 6.26329, 5.64443, 2.30155, -6.834, 4.75833, -2.7507, -6.8394, -0.594252, 4.98005, -0.592389, 8.04342, 2.90336, 1.19093, 8.05487, -2.4623, 3.27878, 5.61973, 2.88337, 5.91629, 1.77722, -4.22291, 5.03823, -5.62039, 2.8837, -5.91512, -9.34373, 1.73119, -0.600628, -2.3921, -2.16722, 8.67114, 1.18477, -4.81736, -2.37139, 8.05487, -2.4623, -3.27878)
 
 [node name="TestScene" type="Node3D"]
 
@@ -80,7 +74,6 @@ size = Vector3(110, 1, 110)
 material = SubResource("StandardMaterial3D_gvjcg")
 
 [node name="SpiderBot" parent="." instance=ExtResource("1_wpvvh")]
-move_speed = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="SpiderBot"]
 transform = Transform3D(1, 0, 0, 0, 0.991102, 0.133104, 0, -0.133104, 0.991102, 0, 6.97285, 10.6348)
@@ -92,14 +85,15 @@ target = NodePath("../SpiderBot")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_6hwa7")
 
-[node name="ObstacleStaticBody" type="StaticBody3D" parent="."]
-transform = Transform3D(0.988178, 0.153313, 0, -0.153313, 0.988178, 0, 0, 0, 1, -17.3178, 9.53674e-07, 2.08469)
+[node name="SeeBot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_t566u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 1)
+target = NodePath("../SpiderBot")
 
-[node name="Obstacle" type="MeshInstance3D" parent="ObstacleStaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0.0513201, 0)
-mesh = SubResource("SphereMesh_jxceh")
-skeleton = NodePath("")
+[node name="SeeBot2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_t566u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 2, 2)
+skeleton = NodePath("../SeeBot")
+target = NodePath("../SeeBot")
 
-[node name="ObstacleCollision" type="CollisionShape3D" parent="ObstacleStaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0513201, 0)
-shape = SubResource("ConvexPolygonShape3D_r3b0n")
+[node name="SeeBot3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_t566u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9777, 1.23986, 12.8958)
+target = NodePath("../SeeBot2")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cp1v1hjefcjuo"]
 
-[ext_resource type="Script" path="res://Scripts/quat_bot.gd" id="1_hyb4h"]
+[ext_resource type="Script" path="res://quat_bot_follow.gd" id="1_6cfdu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3uw85"]
 radius = 2.0
@@ -16,7 +16,7 @@ size = Vector3(1, 1, 3)
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="QuatBot" type="Node3D"]
-script = ExtResource("1_hyb4h")
+script = ExtResource("1_6cfdu")
 
 [node name="QuatBotBody" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
