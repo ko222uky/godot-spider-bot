@@ -17,15 +17,9 @@ func _process(_delta: float) -> void:
 	# Also orthonormalize() to correct for floating point precision error
 	transform.basis = lerp(transform.basis, player_direction_basis, turn_speed * _delta).orthonormalized()
 	
-	
+
 	# Quaternion method; same result, since we instantiate a quaternion with our computed basis
 	var a = Quaternion(transform.basis) # from
 	var b = Quaternion(player_direction_basis) # to
 	var c = a.slerp(b, turn_speed * _delta)
 	#transform.basis = Basis(c)
-	
-
-
-
-	
-
