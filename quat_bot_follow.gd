@@ -27,13 +27,10 @@ func _process(_delta: float) -> void:
 	var player_direction_basis = Basis(player_direction_x, player_direction_y, player_direction_z).orthonormalized()
 
 	var target_cos_theta = player_direction_z.normalized().dot(transform.basis.z.normalized())	
-<<<<<<< HEAD
+
 	# the dot product returns radians. If the angle is < 90 degrees, we have a value > 0.
 	# Thus, any angle sharper than our detection_angle will have a cos_theta that is GREATER than cos(detection_angle) 	
-=======
-	
-	
->>>>>>> 44672f03206676f915ce47c7940b1b4d34e460d5
+
 	
 	if target_cos_theta > cos(deg_to_rad(detection_angle)) && global_position.distance_to(player.global_position) < detection_distance:
 		transform.origin = lerp(transform.origin, player.transform.origin, MOVE_SPEED * _delta)
